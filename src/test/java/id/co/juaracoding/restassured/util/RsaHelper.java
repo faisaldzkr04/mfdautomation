@@ -2,10 +2,10 @@ package id.co.juaracoding.restassured.util;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.OAEPParameterSpec;
-import javax.crypto.spec.MGF1ParameterSpec;
 import javax.crypto.spec.PSource;
 import java.security.KeyFactory;
 import java.security.PublicKey;
+import java.security.spec.MGF1ParameterSpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
