@@ -1,13 +1,11 @@
 package id.co.juaracoding.restassured;
 
 import id.co.juaracoding.restassured.util.RsaHelper;
-import id.co.juaracoding.util.TestConfig;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,8 +30,8 @@ public class RegisterApiTest extends BaseRestAssuredTest {
         body.put("last_education", "S1");
         body.put("blood_type", "O");
         body.put("postal_code", "69162");
-        body.put("captcha_answer", TestConfig.CAPTCHA_ANSWER);
-        body.put("captcha_hash", TestConfig.CAPTCHA_HASH);
+        body.put("captcha_answer", captchaAnswer());
+        body.put("captcha_hash", captchaHash());
         return body;
     }
 
