@@ -20,4 +20,11 @@
         </packages>
     </test>
 
+    <!-- REST API Test menggunakan REST Assured -->
+    <test name="REST API Tests">
+        <packages>
+            <package name="id.co.juaracoding.restassured"/>
+        </packages>
+    </test>
+
 </suite>
