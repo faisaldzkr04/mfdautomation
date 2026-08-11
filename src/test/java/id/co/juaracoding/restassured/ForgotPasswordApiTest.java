@@ -1,6 +1,5 @@
 package id.co.juaracoding.restassured;
 
-import id.co.juaracoding.util.TestConfig;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
