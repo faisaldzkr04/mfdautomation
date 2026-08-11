@@ -11,9 +11,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>mfdautomation</name>
-    <description>
-        QA Automation Framework using Java, Maven, TestNG and Selenium WebDriver
-    </description>
+    <description>QA Automation Framework using Java, Maven, TestNG, Selenium WebDriver and REST Assured</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -22,21 +20,19 @@
 
         <selenium.version>4.25.0</selenium.version>
         <testng.version>7.10.2</testng.version>
+        <restassured.version>5.5.6</restassured.version>
 
         <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.5.0</maven.surefire.plugin.version>
     </properties>
 
     <dependencies>
-
-        <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
-        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -44,12 +40,17 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- REST Assured untuk pengujian REST API -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-
-            <!-- Java Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -61,26 +62,22 @@
                 </configuration>
             </plugin>
 
-            <!-- TestNG / Maven Surefire -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
-
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
                     <systemPropertyVariables>
                         <base.url>${base.url}</base.url>
+                        <base.api.url>${base.api.url}</base.api.url>
+                        <x.api.key>${x.api.key}</x.api.key>
                     </systemPropertyVariables>
-
                     <useSystemClassLoader>true</useSystemClassLoader>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
