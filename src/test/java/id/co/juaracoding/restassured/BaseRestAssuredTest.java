@@ -1,6 +1,5 @@
 package id.co.juaracoding.restassured;
 
-import id.co.juaracoding.util.TestConfig;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 
@@ -11,10 +10,18 @@ public abstract class BaseRestAssuredTest {
 
     @BeforeClass(alwaysRun = true)
     public void setUpRestAssured() {
-        RestAssured.baseURI = TestConfig.BASE_API_URL;
+        RestAssured.baseURI = System.getProperty("base.api.url", "http://localhost:8080");
     }
 
     protected String apiKey() {
-        return TestConfig.X_API_KEY;
+        return System.getProperty("x.api.key", "");
+    }
+
+    protected String captchaAnswer() {
+        return System.getProperty("captcha.answer", "");
+    }
+
+    protected String captchaHash() {
+        return System.getProperty("captcha.hash", "");
     }
 }
