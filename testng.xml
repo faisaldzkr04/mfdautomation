@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MFD Automation Test Suite" verbose="1" parallel="false">
 
-<suite name="MFD Automation Test Suite"
-       verbose="1"
-       parallel="false">
-
-    <!-- Unit Test menggunakan TestNG -->
     <test name="TestNG Unit Tests">
         <packages>
             <package name="id.co.juaracoding.testng"/>
         </packages>
     </test>
 
-    <!-- UI Test menggunakan Selenium WebDriver -->
     <test name="Selenium UI Tests">
         <packages>
             <package name="id.co.juaracoding.selenium"/>
         </packages>
     </test>
 
-    <!-- REST API Test menggunakan REST Assured -->
     <test name="REST API Tests">
         <packages>
             <package name="id.co.juaracoding.restassured"/>
+        </packages>
+    </test>
+
+    <test name="Cucumber Web Tests">
+        <packages>
+            <package name="id.co.juaracoding.cucumber.web"/>
+        </packages>
+    </test>
+
+    <test name="Cucumber API Tests">
+        <packages>
+            <package name="id.co.juaracoding.cucumber.api"/>
         </packages>
     </test>
 
