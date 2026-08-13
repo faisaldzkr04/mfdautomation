@@ -11,7 +11,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>mfdautomation</name>
-    <description>QA Automation Framework using Java, Maven, TestNG, Selenium WebDriver and REST Assured</description>
+    <description>QA Automation Framework using Java, Maven, TestNG, Selenium WebDriver, REST Assured and Cucumber</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -22,6 +22,7 @@
         <testng.version>7.10.2</testng.version>
         <restassured.version>5.5.6</restassured.version>
         <jackson.version>2.17.3</jackson.version>
+        <cucumber.version>7.18.1</cucumber.version>
 
         <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.5.0</maven.surefire.plugin.version>
@@ -41,7 +42,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- REST Assured untuk pengujian REST API -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -49,11 +49,25 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JSON serializer untuk body Map pada REST Assured -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber wrapper untuk skenario Gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
