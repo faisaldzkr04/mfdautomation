@@ -269,6 +269,6 @@ Gunakan system property atau environment variable saat menjalankan test.
 
 ## 👨‍💻 Author
 
-**Faisal Dzikri**
+**Mohammad Faisal Dzikri**
 
 Project ini dibuat sebagai bagian dari pembelajaran dan pengembangan kemampuan **Software Quality Assurance & Automation Testing**.
